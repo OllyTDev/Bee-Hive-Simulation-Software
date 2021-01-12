@@ -1,0 +1,55 @@
+  tick
+  DailyUpdateProc
+  SeasonProc_HoPoMo
+  // Egg laying & development:
+
+Laying and growth:
+  WorkerEggsDevProc
+  DroneEggsDevProc
+  NewEggsProc
+
+  WorkerEggLayingProc
+  DroneEggLayingProc
+  WorkerLarvaeDevProc
+  DroneLarvaeDevProc
+  NewWorkerLarvaeProc
+  NewDroneLarvaeProc
+  WorkerPupaeDevProc
+  DronePupaeDevProc
+  NewWorkerPupaeProc
+  NewDronePupaeProc
+  WorkerIHbeesDevProc
+  DronesDevProc
+  BroodCareProc
+  NewIHbeesProc
+  NewDronesProc
+
+
+  ; Foraging module:
+  GenericPlotClearProc //clears the grid each tick (I BEElieve)
+  if ( TotalForagers
+         + NewForagerSquadronsHealthy * SQUADRON_SIZE
+         + NewForagerSquadronsInfectedAsPupae * SQUADRON_SIZE
+         + NewForagerSquadronsInfectedAsAdults * SQUADRON_SIZE ) > 0
+    [
+      Start_IBM_ForagingProc
+    ]
+
+  ask turtles //who the fuck is turtles?
+  [
+    set label-color black
+    ifelse ploidy = 2
+    [
+      set label number
+    ]
+    [
+      if ploidy = 1
+      [
+        set label number
+      ]
+    ]
+  ]
+  CountingProc
+  PollenConsumptionProc // food
+  HoneyConsumptionProc  // om nom nom 
+  DoPlotsProc

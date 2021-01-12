@@ -1,0 +1,155 @@
+BROOD CARE:
+  set FORAGER_NURSING_CONTRIBUTION  0.2
+  set MAX_BROOD_NURSE_RATIO  3
+    ; 3  (3: Free & Racey 1968) (Becher et al. 2010: 2.65)
+    ; # brood that can be raised by a single "nurse" bee ("nurse": IH-bee and
+    ; to some degree also foragers!, see FORAGER_NURSING_CONTRIBUTION)
+
+; COLONY:
+  set ColonyDied  FALSE
+  set DRONE_EGGS_PROPORTION  0.04
+    ; 0.04  Wilkinson&Smith 2002 (from Allen 1963, 1965)
+
+  set MIN_IDEAL_POLLEN_STORE  250
+    ; 250  [g] min. amount of pollen that a colony tries to store
+
+  set POLLEN_STORE_INIT  100
+    ; 100 [g] pollen present on 1st day of simulation
+
+  set PRE_SWARMING_PERIOD  3
+    ;  HoPoMo: 3d, see also Winston p. 184
+
+  set PROTEIN_STORE_NURSES_d  7
+    ;  7 [d] Crailsheim 1990
+
+  set ProteinFactorNurses  1
+    ; 0..1, is daily calculated in PollenConsumptionProc, reflects protein
+    ; content of brood food
+
+  set Queenage  230       ;  queen emerged mid of May
+
+  set WEIGHT_WORKER_g  0.1
+    ; 0.125  0.1 or 0.11 or 0.125
+    ; (0.1: HoPoMo 0.11: ; Martin 1998: 1kg adults = 9000 bees)
+    ; (0.125: Calis et al. 1999) higher weight => less mites!
+
+; DEVELOPMENT:
+  set AFF_BASE  21       ; like BEEPOP
+  set MIN_AFF 7  ; Robinson 1992: 7d; see also: Winston 1987, p. 92/93
+    ; models: Amdam & Omholt 2003, Beshers et al 2001: 7d
+  set MAX_AFF 50
+    ; within range given in Winston 1987, p. 92/93
+  set DRONE_EGGLAYING_START  115
+    ;  115: 25.April (Allen 1963: late April ..late August)
+  set DRONE_EGGLAYING_STOP  240
+    ; 240  240: 28.August (Allen 1963: late April ..late August)
+  set DRONE_HATCHING_AGE  3     ; Jay 1963, Hrassnig, Crailsheim 2005
+  set DRONE_PUPATION_AGE  10    ; i.e. capping of the cell; Fukuda, Ohtani 1977
+  set DRONE_EMERGING_AGE  24
+  set HATCHING_AGE  3           ;  Winston p. 50
+  set PUPATION_AGE  9    ; i.e. capping of the cell
+  set EMERGING_AGE  21
+  set MAX_EGG_LAYING 1600         ; 1600  max. # eggs laid per day
+
+; ENVIRONMENT
+  set SEASON_START  1       ; season: 1st January - 31st December, i.e.
+  set SEASON_STOP  365      ; foraging potentially possible throughout the year (weather depending)
+  set ABANDON_POLLEN_PATCH_PROB_PER_S  0.00002
+
+
+; FORAGING
+  set CROPVOLUME  50
+    ; 50   [microlitres] (~50mg nectar) Winston (1987), Nuñez (1966, 1970), Schmid-Hempel et al. (1985)
+  set FIND_DANCED_PATCH_PROB  0.5; (0.5 = ca. average of reported values):
+    ; Seeley 1983: recruits required 4.8 dance-guided search trips to find target patch = 0.21
+    ; Judd 1995: of 63 dance followers, 16 were successful, 16/63 = 0.25
+    ; Biesmeijer, deVries 2001: review: 0.95 (Oettingen-Spielberg 1949), 0.73 (Lindauer 1952)
+
+  set FLIGHT_VELOCITY  6.5
+    ; 6.57084    [m/s] derived from Seeley 1994, mean velocity
+    ; during foraging flight see also Ribbands p127: 12.5-14.9mph (*1.609=20.1-24.0 km/h =
+    ; 5.58-6.66m/s)
+
+  set FLIGHTCOSTS_PER_m 0.000006   ;
+    ; [kJ/m] Flightcosts per m (Goller, Esch 1990: 0.000006531 kJ/m,  (assuming speed of 6.5m/s:
+    ; flight costs: 0.0424W - compare with Schmid-Hempel et al. 1985: 0.0334W => 0.000005138 )
+
+  set FORAGING_STOP_PROB  0.3
+
+  set MAX_DANCE_CIRCUITS  117                   ;  (117) (Seeley, Towne 1992)
+  set MAX_PROPORTION_POLLEN_FORAGERS  0.8       ;  (0.8: Lindauer 1952)
+  set POLLEN_DANCE_FOLLOWERS  2     ; 2: number of bees, following a pollen dancer
+  set POLLENLOAD  0.015
+    ; [g] 0.015g average weight of 2 pollen pellets, HoPoMo: 15 mg: "On average,
+    ; one pollen foraging flight results in 15mg of collected pollen (Seeley, 1995)"
+
+  set ProbPollenCollection  0
+    ; probability to collect pollen instead of nectar  calculated in ForagingRoundProc
+
+  set SEARCH_LENGTH_M 17 * 60 * FLIGHT_VELOCITY  ; 17*60*6.5 = 6630m
+    ; [m] distance (= 17 min!), a unsuccesful forager flies on average
+    ; Seeley 1983: search trip: 17min (+-11)
+
+  set SimpleDancing FALSE
+    ; (false) if true: fixed nectar dancing TH and fixed number of dance followers
+
+  set TIME_UNLOADING  116
+    ; (116) [s] time, a nectar forager needs to become unloaded  derived from Seeley 1994
+
+  set TIME_UNLOADING_POLLEN  210
+    ; (210s = 3.5 min) [s]  Ribbands p.131: 3.5 minutes (Park 1922,1928b)
+
+  set TotalFPdetectionProb  -1
+    ; correct value is set in "Foraging_searchingProc" but only when searching takes places
+
+; MORTALITY
+  set DRONE_LIFESPAN  37
+   ; Fukuda Ohtani 1977; life span drones:  summer: 14d, autumn: 32-42d
+  set LIFESPAN  290
+    ; [d] 290d (max. life span of worker; Sakagami, Fukuda 1968)
+
+  set MAX_TOTAL_KM  800
+    ; [ km ]  800, as mortality acts only at end of time step! 838km: max. flight
+    ; performance in a foragers life (Neukirch 1982)
+
+  set MORTALITY_DRONE_EGGS 0.064     ;  Fukuda Ohati 1977:
+  set MORTALITY_DRONE_LARVAE 0.044   ;  100 eggs, 82 unsealed brood, 60 sealed brood and 56 adults
+  set MORTALITY_DRONE_PUPAE  0.005
+  set MORTALITY_DRONES  0.05        ; Fukuda Ohati 1977: "summer", av. lifespan: 14d
+  set MORTALITY_EGGS  0.03           ;  HoPoMo p. 230: 0.03
+  set MORTALITY_LARVAE  0.01       ;  HoPoMo p. 230: 0.01
+  set MORTALITY_PUPAE  0.001       ;  HoPoMo p. 230: 0.001
+  set MORTALITY_FOR_PER_SEC  0.00001
+    ; derived from Visscher&Dukas 1997 (Mort 0.036 per hour foraging)
+
+  set MORTALITY_INHIVE  0.004;
+    ; 0.0038: derived from Martin 2001 (healthy winter
+    ; based on 50% mortality) (HoPoMo: MORTALITYbase: 0.01) p. 230
+
+
+; PHYSICS
+  set ENERGY_HONEY_per_g  12.78
+    ; [kJ/g] (= [J/mg])    Wikipedia: http://www.nal.usda.gov/fnic/foodcomp/search/
+
+  set ENERGY_SUCROSE  0.00582       ; 0.00582 [kJ/micromol]   342.3 g/mol
+
+
+; AUXILIARY VARIABLES
+  set DecentHoneyEnergyStore  N_INITIAL_BEES * 1.5 * ENERGY_HONEY_per_g
+    ; re-set in every foraging round (ForagingRoundProc )
+
+  set HONEY_STORE_INIT  0.5 * MAX_HONEY_STORE_kg * 1000
+    ;  [g]   (1g Honey = 124.80kJ)
+
+  set HoneyEnergyStore  (HONEY_STORE_INIT * ENERGY_HONEY_per_g)       ;  [kJ]
+  set IdealPollenStore_g  POLLEN_STORE_INIT
+    ; [g] is calculated daily in PollenConsumptionProc
+
+  set MAX_HONEY_ENERGY_STORE  MAX_HONEY_STORE_kg * ENERGY_HONEY_per_g * 1000 ; [kJ]
+  set PollenStore_g  POLLEN_STORE_INIT       ;  [g]
+  set NewForagerSquadronsHealthy (N_INITIAL_BEES / SQUADRON_SIZE)
+    ; foragers in time step 1 are all healthy
+
+  set TotalForagers  NewForagerSquadronsHealthy * SQUADRON_SIZE
+    ;  has to be set here to calculate egg laying on the 1st time step
+

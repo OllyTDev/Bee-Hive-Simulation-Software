@@ -1,0 +1,25 @@
+Set everything back to 0 for the start of a new day ie
+AdultWorkersDeaths = 0;
+
+if ( quantityMyl < CROPVOLUME * SQUADRON_SIZE and amountPollen_g < POLLENLOAD * SQUADRON_SIZE)
+//if the squadron can handle the number of flowers and pollen load
+
+//check if the hive is dead
+if HoneyEnergyStore < 0
+   [
+     if ColonyDied = false
+     [
+       cout << "Starvation! Colony died on Day " + ticks;
+     ]
+     set ColonyDied true
+   ]
+if (ticks > 1) and (TotalWorkerAndDroneBrood + TotalIHbees + TotalForagers = 0)
+ [
+   if ColonyDied = false
+   [
+     cout << "No bees left! Colony died on Day " + ticks;
+   ]
+   set ColonyDied true
+ ]
+
+Can set other things here but otherwise that's it.

@@ -1,0 +1,25 @@
+Our main tick function
+
+tick
+DailyUpdate
+WorkerEggsDevelopmentProc //Calls hatch
+DroneEggsDevelopmentProc
+NewEggsProc
+
+WorkerEggLayProc
+DroneEggLayProc
+WorkerDevProc
+DroneDevProc
+
+
+Maybe two functions to update 
+the number of workers and drones
+
+Foraging 
+If (Bees are alive){
+	Forage
+}
+
+CountingProc //Counts # bees in different stages
+PollenConsumptionProc
+HoneyConsumptionProc //Same as pollen, use the values from BEEHAVE

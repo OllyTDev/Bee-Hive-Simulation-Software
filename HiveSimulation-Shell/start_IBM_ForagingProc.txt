@@ -1,0 +1,65 @@
+set CROPVOLUME  50
+    ; 50   [microlitres] (~50mg nectar) Winston (1987), Nuñez (1966, 1970), Schmid-Hempel et al. (1985)
+ set FLIGHT_VELOCITY  6.5
+    ; 6.57084    [m/s] derived from Seeley 1994, mean velocity
+    ; during foraging flight see also Ribbands p127: 12.5-14.9mph (*1.609=20.1-24.0 km/h =
+    ; 5.58-6.66m/s)
+  set FLIGHTCOSTS_PER_m 0.000006   ;
+    ; [kJ/m] Flightcosts per m (Goller, Esch 1990: 0.000006531 kJ/m,  (assuming speed of 6.5m/s:
+    ; flight costs: 0.0424W - compare with Schmid-Hempel et al. 1985: 0.0334W => 0.000005138 )
+  set SEARCH_LENGTH_M 17 * 60 * FLIGHT_VELOCITY  ; 17*60*6.5 = 6630m
+    ; [m] distance (= 17 min!), a unsuccesful forager flies on average
+    ; Seeley 1983: search trip: 17min (+-11)
+  set POLLENLOAD_g  0.015
+    ; [g] 0.015g average weight of 2 pollen pellets, HoPoMo: 15 mg: "On average,
+    ; one pollen foraging flight results in 15mg of collected pollen (Seeley, 1995)"
+
+  set FORAGING_STOP_PROB  0.3
+
+  set SEARCH_LENGTH_M 17 * 60 * FLIGHT_VELOCITY  ; 17*60*6.5 = 6630m
+    ; [m] distance (= 17 min!), a unsuccesful forager flies on average
+    ; Seeley 1983: search trip: 17min (+-11)
+
+vector<wBees>;
+
+ForagerProc{
+
+Set laziness //:') I'm dying this is so cute
+
+if (the pollen store isn't full) 
+{
+	while (continueForaging == true)
+	{
+	ForagingRoundProc;
+	ForagingRounds = ForagingRounds + 1;
+	meanTripDuration = ColonyTripDurationSum / ColonyTripForagersSum //find these
+	
+	summedTripDuration = summedTripDuration + meanTripDuration
+		if (summedTripDuration >= DailyForagingPeroid)
+		{
+		continueForaging = false;
+		}
+	}
+ForagersLifespanProc;
+}
+
+
+ForagingRoundProc
+{
+	DecentHoneyEnergyStore = (TotalIHbees + TotalForagers ) * 1.5 * ENERGY_HONEY_per_g;
+ 	if (DecentHoneyEnergyStore == 0)
+  	{
+    	DecentHoneyEnergyStore = 1.5 * ENERGY_HONEY_per_g;
+  	} ; to avoid division by 0
+
+  //now a sea of functions which need understanding
+  FlowerPatchesUpdateProc
+  Foraging_start-stopProc  ; some foragers might spontaneously start foraging
+  Foraging_searchingProc    ; unexperienced foragers search new flower patch
+  Foraging_collectNectarPollenProc  ; succesful scouts and experienced Foragers gather nectar
+  Foraging_flightCosts_flightTimeProc  ; energy costs for flights and trip duration
+  Foraging_mortalityProc  ; foragers might die on their way back to the colony
+  Foraging_dancingProc    ; successful foragers might dance..
+  Foraging_unloadingProc  ; ..and unload their crop & increase colony's honey store
+
+}

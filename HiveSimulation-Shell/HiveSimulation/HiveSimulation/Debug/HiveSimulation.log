@@ -1,0 +1,24 @@
+﻿  HiveSimulation.cpp
+\\nasstudusers\1$\n0620111\3rdyearbby\fyp\hivesimulation\hivesimulation\hivesimulation.cpp(208): warning C4018: '<': signed/unsigned mismatch
+\\nasstudusers\1$\n0620111\3rdyearbby\fyp\hivesimulation\hivesimulation\hivesimulation.cpp(213): warning C4018: '<': signed/unsigned mismatch
+\\nasstudusers\1$\n0620111\3rdyearbby\fyp\hivesimulation\hivesimulation\hivesimulation.cpp(339): warning C4018: '<': signed/unsigned mismatch
+\\nasstudusers\1$\n0620111\3rdyearbby\fyp\hivesimulation\hivesimulation\hivesimulation.cpp(342): warning C4018: '>': signed/unsigned mismatch
+\\nasstudusers\1$\n0620111\3rdyearbby\fyp\hivesimulation\hivesimulation\hivesimulation.cpp(351): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+\\nasstudusers\1$\n0620111\3rdyearbby\fyp\hivesimulation\hivesimulation\hivesimulation.cpp(376): warning C4018: '<': signed/unsigned mismatch
+\\nasstudusers\1$\n0620111\3rdyearbby\fyp\hivesimulation\hivesimulation\hivesimulation.cpp(380): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
+\\nasstudusers\1$\n0620111\3rdyearbby\fyp\hivesimulation\hivesimulation\hivesimulation.cpp(391): warning C4018: '>': signed/unsigned mismatch
+\\nasstudusers\1$\n0620111\3rdyearbby\fyp\hivesimulation\hivesimulation\hivesimulation.cpp(492): warning C4018: '<': signed/unsigned mismatch
+\\nasstudusers\1$\n0620111\3rdyearbby\fyp\hivesimulation\hivesimulation\hivesimulation.cpp(497): warning C4018: '<': signed/unsigned mismatch
+\\nasstudusers\1$\n0620111\3rdyearbby\fyp\hivesimulation\hivesimulation\hivesimulation.cpp(601): warning C4018: '<': signed/unsigned mismatch
+\\nasstudusers\1$\n0620111\3rdyearbby\fyp\hivesimulation\hivesimulation\hivesimulation.cpp(654): warning C4018: '<': signed/unsigned mismatch
+\\nasstudusers\1$\n0620111\3rdyearbby\fyp\hivesimulation\hivesimulation\hivesimulation.cpp(666): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+\\nasstudusers\1$\n0620111\3rdyearbby\fyp\hivesimulation\hivesimulation\hivesimulation.cpp(673): warning C4554: '&': check operator precedence for possible error; use parentheses to clarify precedence
+\\nasstudusers\1$\n0620111\3rdyearbby\fyp\hivesimulation\hivesimulation\hivesimulation.cpp(692): warning C4018: '<': signed/unsigned mismatch
+\\nasstudusers\1$\n0620111\3rdyearbby\fyp\hivesimulation\hivesimulation\hivesimulation.cpp(696): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
+\\nasstudusers\1$\n0620111\3rdyearbby\fyp\hivesimulation\hivesimulation\hivesimulation.cpp(707): warning C4018: '>': signed/unsigned mismatch
+\\nasstudusers\1$\n0620111\3rdyearbby\fyp\hivesimulation\hivesimulation\hivesimulation.cpp(772): warning C4018: '<': signed/unsigned mismatch
+\\nasstudusers\1$\n0620111\3rdyearbby\fyp\hivesimulation\hivesimulation\hivesimulation.cpp(950): warning C4018: '<': signed/unsigned mismatch
+\\nasstudusers\1$\n0620111\3rdyearbby\fyp\hivesimulation\hivesimulation\hivesimulation.cpp(988): warning C4018: '<': signed/unsigned mismatch
+\\nasstudusers\1$\n0620111\3rdyearbby\fyp\hivesimulation\hivesimulation\hivesimulation.cpp(1033): warning C4018: '<': signed/unsigned mismatch
+  HiveSimulation.vcxproj -> \\nasstudusers\1$\n0620111\3rdYEARbby\FYP\HiveSimulation\Debug\HiveSimulation.exe
+  HiveSimulation.vcxproj -> \\nasstudusers\1$\n0620111\3rdYEARbby\FYP\HiveSimulation\Debug\HiveSimulation.pdb (Partial PDB)
